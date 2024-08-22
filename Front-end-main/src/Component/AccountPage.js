@@ -14,7 +14,6 @@ const Accounts = () => {
       });
       setAccounts(response.data);
     };
-
     fetchAccounts();
   }, [token]);
 
