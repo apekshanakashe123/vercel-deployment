@@ -9,7 +9,7 @@ const Accounts = () => {
   useEffect(() => {
     console.log(token)
     const fetchAccounts = async () => {
-      const response = await axios.get('http://localhost:3021/account/', {
+      const response = await axios.get('https://vercel-deployment-gamma-gules.vercel.app/account/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAccounts(response.data);
