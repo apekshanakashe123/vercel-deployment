@@ -9,7 +9,7 @@ const Transactions = () => {
   const [balance, setBalance] = useState(0);
   const { token } = useContext(AuthContext);
 
-  useEffect(() => {
+  
     const fetchTransactions = async () => {
       console.log(token)
       const response = await axios.get('https://vercel-deployment-gamma-gules.vercel.app/Trans/', {
@@ -17,7 +17,7 @@ const Transactions = () => {
       });
       setTransactions(response.data);
     };
-
+useEffect(() => {
     fetchTransactions();
   }, [token]);
 
@@ -38,6 +38,7 @@ const Transactions = () => {
       if (response.data.message === 'Deposit successful') {
         setBalance(response.data.newBalance); 
         setMeassage('Deposit successful');
+        fetchTransactions()
       } else {
         setMeassage('Deposit failed: ' + response.data.message);
       }
@@ -68,6 +69,7 @@ const Transactions = () => {
     if (withdrawresponse.data.message === 'Withdrawal successful') {
       setBalance(withdrawresponse.data.newBalance); 
       setMeassage('Withdrawal successful');
+      fetchTransactions()
     } else {
       setMeassage('Withdrawal failed: ' + withdrawresponse.data.message);
     }
