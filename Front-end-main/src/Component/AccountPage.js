@@ -9,7 +9,7 @@ const Accounts = () => {
   useEffect(() => {
     console.log(token)
     const fetchAccounts = async () => {
-      const response = await axios.get('https://vercel-deployment-gamma-gules.vercel.app/account/', {
+      const response = await axios.get('https://vercel-deployment-backend-eta.vercel.app/account/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setAccounts(response.data);
@@ -21,12 +21,12 @@ const Accounts = () => {
     <div>
       <h2>Accounts</h2>
       <ul>
-        <li>Username: {account.username}</li>
-        <li>Email: {account.email}</li>
+        <li>Username: {accounts.username}</li>
+        <li>Email: {accounts.email}</li>
         <li>AccountId : {accounts.Id}</li>
       </ul>
     </div>
   );
 };
-
+//
 export default Accounts;

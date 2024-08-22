@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://vercel-deployment-gamma-gules.vercel.app', 
+  baseURL: 'https://vercel-deployment-backend-eta.vercel.app', 
   headers: {
     'Content-Type': 'application/json',
   },

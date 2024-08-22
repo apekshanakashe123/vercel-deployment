@@ -12,7 +12,7 @@ const Transactions = () => {
   
     const fetchTransactions = async () => {
       console.log(token)
-      const response = await axios.get('https://vercel-deployment-gamma-gules.vercel.app/Trans/', {
+      const response = await axios.get('https://vercel-deployment-backend-eta.vercel.app/Trans/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTransactions(response.data);
@@ -29,7 +29,7 @@ useEffect(() => {
   
     try {
       const response = await axios.post(
-        'https://vercel-deployment-gamma-gules.vercel.app/Trans/deposit',
+        'https://vercel-deployment-backend-eta.vercel.app/Trans/deposit',
         { amount, TransDate }, 
         {
           headers: { Authorization: `Bearer ${token}` }, 
@@ -61,7 +61,7 @@ useEffect(() => {
     const Withdrawdate = today.toISOString().split('T')[0];
 
     const withdrawresponse =await axios.post(
-      'https://vercel-deployment-gamma-gules.vercel.app/Trans/withdraw',
+      'https://vercel-deployment-backend-eta.vercel.app/Trans/withdraw',
       { amount },
       {Withdrawdate},{
       headers: { Authorization: `Bearer ${token}` } }
