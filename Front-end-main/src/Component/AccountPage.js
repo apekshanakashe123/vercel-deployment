@@ -22,9 +22,9 @@ const Accounts = () => {
     <div>
       <h2>Accounts</h2>
       <ul>
-        {accounts.map((account) => (
-          <li>{account.username}</li>
-        ))}
+        <li>Username: {account.username}</li>
+        <li>Email: {account.email}</li>
+        <li>AccountId : {accounts.Id}</li>
       </ul>
     </div>
   );
