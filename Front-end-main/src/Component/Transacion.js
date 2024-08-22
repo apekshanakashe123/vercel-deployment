@@ -77,11 +77,26 @@ const Transactions = () => {
   return (
     <div>
       <h2>Transactions</h2>
-      <ul>
-        {transactions.map((transaction) => (
-          <li key={transaction.AccountId}>{transaction.AccountID}: {transaction.Username}:{transaction.Amount}:{transaction.TransactionType}:{transaction.balanceAmount}</li>
-        ))}
-      </ul>
+       <table>
+         <thead>
+           <tr>
+             <th>Customer Name</th>
+             <th>Amount</th>
+             <th>Transaction Type</th>
+             <th>Balance Amount</th>
+           </tr>
+         </thead>
+         <tbody>
+           {transactions.map((transaction) => (
+             <tr key={transaction.AccountId}>
+               <td>{transaction.Username}</td>
+               <td>{transaction.Amount}</td>
+               <td>{transaction.TransactionType}</td>
+               <td>{transaction.balanceAmount}</td>
+             </tr>
+           ))}
+         </tbody>
+       </table>
 
       <input
         type="number"
